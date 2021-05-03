@@ -1,10 +1,15 @@
 # Site settings
 course_name: Calcul Intensif (M1CI)
 course_description: > # this means to ignore newlines until "course_semester:"
-  Ce cours est une introduction à la vision par ordinateur. Les sujets traités incluent : les modèles de caméras, 
-  la géométrie à vues multiples, la reconstruction tridimensionnelle, certains traitements d'image de bas niveau et 
-  les problèmes de vision de haut niveau tels que la reconnaissance d'objets et de scènes.
-  
+  Ce cours présente les principes de base du calcul parallèle et intensif. Le calcul parallèle 
+  fait référence au processus de décomposition de problèmes importants dont il est difficile 
+  de traiter sur un seul processeur  en parties plus petites, indépendantes, souvent similaires, 
+  qui peuvent être exécutées simultanément par plusieurs processeurs communiquant via la mémoire 
+  partagée ou le réseau. Les résultats intermédiaires sont combinés dans le cadre d'une solution 
+  globale. Ainsi, le principal objectif du calcul parallèle est d'augmenter la puissance de calcul 
+  disponible pour accélérer le traitement des applications et la résolution des problèmes.
+
+
 course_semester: "Printemps 2021"
 
 baseurl: "/m1ci" # the subpath of your site, e.g. /blog/
