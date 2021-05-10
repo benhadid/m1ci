@@ -1,6 +1,4 @@
 ---
-date: 2021-04-28T08:00:00+1:00
+date: 2021-05-10T17:00:00+1:00
 ---
-Les séances de TPs commencent le mercredi 5 mai (labo 4).
-<!--Nothing here yet -->
-<!--Sample announcement, Please check out [here](/). -->
+Les séances de TPs prévues le mercredi 12 mai sont reportées pour le samedi 15 mai en **distanciel**. Cliquez [ici](https://zoom.us/j/92424287147?pwd=YlJ3RHV0b0xjbHkxVGVTZFlOaC8vQT09) pour le lien de connexion.

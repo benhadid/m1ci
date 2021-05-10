@@ -4,11 +4,17 @@ title: Ressources
 permalink: /materials/
 ---
 
+{% include image.html url="/_images/CalvinLinLawrenceSnyder.jpg" width=182 align="right" %}
 {% include image.html url="/_images/VictorEijkhoutBook1FrontCover.jpg" width=175 align="right" %}
 
 ## Ouvrages
 
-- Nous utilisons l'ouvrage de Victor Eijkhout  « <strong>Introduction to High Performance Scientific Computing</strong> ». ([gratuit](https://pages.tacc.utexas.edu/~eijkhout/istc/istc.html)).
+- Nous utilisons l'ouvrage de livre de Victor Eijkhout  « <strong>Introduction to High Performance Scientific Computing</strong> ». ([gratuit](https://pages.tacc.utexas.edu/~eijkhout/istc/istc.html)).
+
+
+- Nous utilisons également le livre de Calvin Lin et Larry Snyder «&nbsp;<strong>Principles of Parallel Programming
+</strong>&nbsp;».<br>
+  <strong>ISBN</strong> : 9780321487902.
 
 ## Ressources Additionnelles
 
