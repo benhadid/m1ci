@@ -1,7 +1,7 @@
 ---
 type: lecture
 date: 2021-05-05T08:00:00+1:00
-title: Threading
+title: Le multitâche et OpenMP
 tldr: "Parallélisation de code (mémoire partagée)"
 thumbnail: /static_files/presentations/lec_03.jpg
 hide_from_announcements: True
