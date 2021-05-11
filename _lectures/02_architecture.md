@@ -9,6 +9,7 @@ links:
     - url: https://1drv.ms/p/s!Agf0g-qZKM8_4F5EpOeoL49noy8x?e=bidjbb    
       name: visualiser
 ---
-
+<!--
 # **Références :**
 # - [Szeliski]({{ site.baseurl }}/_images/Szeliski2ndBookFrontCover.png) : 7.1
+-->
