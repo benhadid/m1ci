@@ -2,7 +2,7 @@
 type: lecture
 date: 2021-05-18T08:00:00+1:00
 title: Systèmes hétérogènes
-tldr: "Parallélisation sur des dispositifs hétérogènes via << OpenCL >>"
+tldr: 'Parallélisation sur des dispositifs hétérogènes via << OpenCL >>'
 thumbnail: /static_files/presentations/lec_05.jpg
 hide_from_announcements: True
 links:
