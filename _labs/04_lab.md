@@ -38,7 +38,7 @@ $ ./vadd
  - Un message vérifiant que l'addition des vecteurs s'est terminée avec succès
 
 
-# Exercice 2 : (calcul du produit matricielle C = A * B - version vectorisée)
+# Exercice 2 : (série d'addition de vecteurs)
 
 Dans cet exercice, vous allez modifier le fichier `vadd_c.c` fourni dans l'exercice n° 1 afin de réaliser plusieurs opérations d'addition de tableaux.
 
@@ -52,7 +52,7 @@ Pour compiler puis exécuter le programme, utiliser les mêmes commandes fournie
  - Un message vérifiant que la série d'addition de vecteurs s'est terminée avec succès
 
 
-# Exercice 3 : (calcul du produit matricielle C = A * B - version OpenMP)
+# Exercice 3 : (addition de trois vecteurs)
 
 Dans les exercices précédents, le *kernel* fourni permet d'additionner deux tableaux à la fois. Nous allons maintenant modifier notre programme (hôte et kernel) afin de réaliser une opération d'addition de trois tableaux en un coup.
 
