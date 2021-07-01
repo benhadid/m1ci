@@ -2,4 +2,5 @@
 _site
 _scratch
 .jekyll-cache
+.vscode
 Gemfile.lock
