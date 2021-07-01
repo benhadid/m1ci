@@ -1,8 +1,8 @@
 ---
 type: lecture
-date: 2021-05-18T08:00:00+1:00
-title: OpenCL - les bases
-tldr: "Parallélisation sur des dispositifs hétérogènes via << OpenCL >> - II"
+date: 2021-06-01T08:00:00+1:00
+title: OpenCL
+tldr: 'Parallélisation sur des dispositifs hétérogènes avec « OpenCL »'
 thumbnail: /static_files/presentations/lec_06.jpg
 hide_from_announcements: True
 links:
