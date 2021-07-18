@@ -82,7 +82,7 @@ est bornée.
 
 Le programme fourni dans `mandelbrot.c` calcule la fractale de Mandelbrot en utilisant OpenMP. Le code, cependant, contient au moins 4 bugs.
 
- 1. identifier et corriger ces bugs afin que le programme foncionne correctement (**4 points**). 
+ 1. identifier et corriger ces bugs afin que le programme fonctionne correctement (**4 points**). 
 
  2. insérez des commentaires dans `mandlebrot.c` pour indiquer les bugs que vous avez trouvés et expliquez quels problèmes ils causaient et comment vous les avez résolus. (**4 points**).
 
