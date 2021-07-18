@@ -11,9 +11,9 @@ items:
   name: Cours
   icon_class: fas fa-book-reader
 
-#- url: /assignments/
-#  name: Devoirs
-#  icon_class: fas fa-laptop-code
+- url: /assignments/
+  name: Devoirs
+  icon_class: fas fa-laptop-code
 
 #- url: /discussions/
 #  name: T. Dirigés
