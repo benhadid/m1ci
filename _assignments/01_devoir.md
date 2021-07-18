@@ -92,7 +92,7 @@ Le programme fourni dans `mandelbrot.c` calcule la fractale de Mandelbrot en uti
 Complétez le code dans `matmul16.cl` afin de réaliser une multiplication de matrices carrées $$(N \times N)$$ (A[N][K] * B[K][N] = C[N][N]). 
 Opérez les changements nécessaires dans ce code et créer une nouvelle version dans `matmul.cl` pour réaliser des multiplications de matrices pas nécessairement carrées : (A[M][K] * B[K][N] = C[M][N]) avec M ≠ N. Apportez les changements nécessaire dans `matmul.c` pour cette deuxième version. 
 
-Les topologies des threads dans un work-group (c.-à-d. nombre et organisation des threads dans un work-group) restent unchangés dans les deux versions (c.-à-d. workgroup de $16 \times 16$).
+Les topologies des threads dans un work-group (c.-à-d. nombre et organisation des threads dans un work-group) restent unchangés dans les deux versions (c.-à-d. workgroup de $$16 \times 16$$).
 
  1. Dans la version (fichiers `matmul16.c` et kernel `matmul16.cl`), vous pouvez supposer que M et N sont des multiples de 16 (**2 points**).
 
