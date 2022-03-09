@@ -1,12 +1,12 @@
 ---
 type: lab
-date: 2021-06-02T08:00:00+1:00
+date: 2022-04-21T08:00:00+1:00
 title: 'Introduction à OpenCL'
 attachment: /static_files/labs/lab_04.zip
 hide_from_announcements: True
 due_event:
     type: due
-    date: 2021-06-02T18:00:00+1:00
+    date: 2022-04-24T18:00:00+1:00
     description: 'Travaux Pratiques #4 - à remettre'
 ---
 

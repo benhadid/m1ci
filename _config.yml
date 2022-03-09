@@ -10,7 +10,7 @@ course_description: > # this means to ignore newlines until "course_semester:"
   disponible pour accélérer le traitement des applications et la résolution des problèmes.
 
 
-course_semester: "Printemps 2021"
+course_semester: "Printemps 2022"
 
 baseurl: "/m1ci" # the subpath of your site, e.g. /blog/
 url: "https://benhadid.github.io/" # the base hostname & protocol for your site

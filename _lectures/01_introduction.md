@@ -1,12 +1,12 @@
 ---
 type: lecture
-date: 2021-04-21T08:00:00+1:00
+date: 2022-03-10T08:00:00+1:00
 title: Introduction
 tldr: "Définition et applications du Calcul Intensif"
 thumbnail: /static_files/presentations/lec_01.jpg
 hide_from_announcements: True
 links:
-    - url: https://1drv.ms/p/s!Agf0g-qZKM8_4DQjpprI6MtKIkm0?e=VJ2Kjf
+    - url: https://adminunivalger-my.sharepoint.com/:p:/g/personal/a_benhadid_univ-alger_dz/Ef57FLsNSipJiXmnstbh528BI7nbYdaMRi23rUbiJCIrwQ?e=zpT3es
       name: visualiser
 ---
 <!--

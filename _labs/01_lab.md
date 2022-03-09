@@ -1,13 +1,13 @@
 ---
 type: lab
-date: 2021-05-05T08:00:00+1:00
+date: 2022-03-10T08:00:00+1:00
 title: 'Mémoire Cache'
 attachment: /static_files/labs/lab_01.zip
 #solutions: /static_files/labs/lab_solutions.pdf
-hide_from_announcements: True
+hide_from_announcements: False
 due_event:
     type: due
-    date: 2021-05-05T18:00:00+1:00
+    date: 2022-03-13T18:00:00+1:00
     description: 'Travaux Pratiques #1 - à remettre'
 ---
 
@@ -116,7 +116,7 @@ Exécutez votre code plusieurs fois avec une valeur de `blocksize` fixée à 20 
 
 - Pourquoi la version en << cache-blocking >> nécessite-t-elle que la matrice ait une certaine taille avant de surpasser les performances de la version 'naïve' ?
 
-## Modifier la taille de bloc
+## Modifier la taille du bloc
 
 Fixez `n` à 10000 et exécutez votre code avec une taille de bloc `blocksize` égale à 50, 100, 500, 1000, 5000.
 

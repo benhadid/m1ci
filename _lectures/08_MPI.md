@@ -1,12 +1,12 @@
 ---
 type: lecture
-date: 2021-06-15T08:00:00+1:00
+date: 2022-12-12T08:00:00+1:00
 title: Message Passing Interface
 tldr: 'Programmation parallèle avec MPI'
 thumbnail: /static_files/presentations/lec_08.jpg
 hide_from_announcements: True
 links:
-    - url: https://1drv.ms/p/s!Agf0g-qZKM8_40RcdaAgp1UkfsJi?e=Rrot9P
+    - url: https://adminunivalger-my.sharepoint.com/:p:/g/personal/a_benhadid_univ-alger_dz/EX81GVAebDZBomE_2qoc1AUBbY4xkIeRh5eUK8FAQodBSg?e=eIoVf4
       name: visualiser
 ---
 <!--

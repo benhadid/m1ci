@@ -1,13 +1,13 @@
 ---
 type: lab
-date: 2021-05-05T08:00:00+1:00
+date: 2022-03-17T08:00:00+1:00
 title: 'Le multitâche (Threads)'
 attachment: /static_files/labs/lab_02.zip
 #solutions: /static_files/labs/lab_solutions.pdf
 hide_from_announcements: True
 due_event:
     type: due
-    date: 2021-05-05T18:00:00+1:00
+    date: 2022-04-03T18:00:00+1:00
     description: 'Travaux Pratiques #2 - à remettre'
 ---
 

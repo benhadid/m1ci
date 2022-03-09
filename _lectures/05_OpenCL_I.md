@@ -1,12 +1,12 @@
 ---
 type: lecture
-date: 2021-05-25T08:00:00+1:00
+date: 2022-04-21T08:00:00+1:00
 title: Systèmes hétérogènes
 tldr: 'Introduction à « OpenCL »'
 thumbnail: /static_files/presentations/lec_05.jpg
 hide_from_announcements: True
 links:
-    - url: https://1drv.ms/p/s!Agf0g-qZKM8_4WSYoJn6oFFQJQAd?e=wBg3AY
+    - url: https://adminunivalger-my.sharepoint.com/:p:/g/personal/a_benhadid_univ-alger_dz/EbtZJYqS6mRGvakyjcSgceYBQ-4zZ-ZQuRb_KHDT-euMaQ?e=fudE6A
       name: visualiser
 ---
 <!--

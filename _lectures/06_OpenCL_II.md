@@ -1,12 +1,12 @@
 ---
 type: lecture
-date: 2021-06-01T08:00:00+1:00
+date: 2022-04-28T08:00:00+1:00
 title: OpenCL
 tldr: 'Parallélisation sur des dispositifs hétérogènes avec « OpenCL »'
 thumbnail: /static_files/presentations/lec_06.jpg
 hide_from_announcements: True
 links:
-    - url: https://1drv.ms/p/s!Agf0g-qZKM8_4hhj1SAcibJZJX3g?e=pnA2Xh
+    - url: https://adminunivalger-my.sharepoint.com/:p:/g/personal/a_benhadid_univ-alger_dz/EWi82gGL3mhAlhKNikyKh3oBDp6g_2qYb1rIN2dh22RBzw?e=yYedXg
       name: visualiser
 ---
 <!--
