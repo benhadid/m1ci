@@ -25,7 +25,7 @@ address: |
 
 # Set your Google Analytics tracking ID (set up yours at http://www.google.com/analytics/)
 # google_analytics: UA-XXXXXXXX-X
-#google_analytics: G-PJCD79GLQ3
+google_analytics: G-9FKYZLVKPL
 ### Do not change the followings unless you know what you are doing ###
 
 # Build settings
