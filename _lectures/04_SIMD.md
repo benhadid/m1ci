@@ -1,6 +1,6 @@
 ---
 type: lecture
-date: 2022-04-14T08:00:00+1:00
+date: 2022-04-21T08:00:00+1:00
 title: Instructions vectorielles
 tldr: "Parallélisation via les << instructions intrinsèques >> du processeur"
 thumbnail: /static_files/presentations/lec_04.jpg

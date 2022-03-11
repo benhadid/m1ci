@@ -4,3 +4,4 @@ _scratch
 .jekyll-cache
 .vscode
 Gemfile.lock
+static_files/assignments/dev/

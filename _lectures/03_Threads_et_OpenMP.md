@@ -1,6 +1,6 @@
 ---
 type: lecture
-date: 2022-04-07T08:00:00+1:00
+date: 2022-04-14T08:00:00+1:00
 title: Le multitâche et OpenMP
 tldr: "Parallélisation de code (mémoire partagée)"
 thumbnail: /static_files/presentations/lec_03.jpg
