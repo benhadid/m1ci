@@ -1,6 +1,6 @@
 ---
 type: lab
-date: 2022-04-07T08:00:00+1:00
+date: 2022-03-31T12:00:00+1:00
 title: 'Mémoire Cache'
 attachment: /static_files/labs/lab_01.zip
 #solutions: /static_files/labs/lab_solutions.pdf

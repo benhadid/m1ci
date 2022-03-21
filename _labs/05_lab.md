@@ -1,6 +1,6 @@
 ---
 type: lab
-date: 2022-05-12T08:00:00+1:00
+date: 2022-05-12T12:00:00+1:00
 title: 'Programmation avancée avec OpenCL'
 attachment: /static_files/labs/lab_05.zip
 hide_from_announcements: True

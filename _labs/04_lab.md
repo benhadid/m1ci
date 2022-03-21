@@ -1,6 +1,6 @@
 ---
 type: lab
-date: 2022-05-05T08:00:00+1:00
+date: 2022-05-05T12:00:00+1:00
 title: 'Introduction à OpenCL'
 attachment: /static_files/labs/lab_04.zip
 hide_from_announcements: True
