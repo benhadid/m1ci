@@ -1,12 +1,12 @@
 ---
 type: lab
-date: 2022-05-12T12:00:00+1:00
+date: 2022-05-05T12:00:00+1:00
 title: 'Programmation avancée avec OpenCL'
 attachment: /static_files/labs/lab_05.zip
 hide_from_announcements: True
 due_event:
     type: due
-    date: 2022-05-22T18:00:00+1:00
+    date: 2022-05-15T18:00:00+1:00
     description: 'Travaux Pratiques #5 - à remettre'
 ---
 

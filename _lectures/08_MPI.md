@@ -1,6 +1,6 @@
 ---
 type: lecture
-date: 2022-05-26T08:00:00+1:00
+date: 2022-05-19T08:00:00+1:00
 title: Message Passing Interface
 tldr: 'Programmation parallèle avec MPI'
 thumbnail: /static_files/presentations/lec_08.jpg

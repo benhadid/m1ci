@@ -1,6 +1,6 @@
 ---
 type: lecture
-date: 2022-05-05T08:00:00+1:00
+date: 2022-04-28T08:00:00+1:00
 title: Systèmes hétérogènes
 tldr: 'Introduction à « OpenCL »'
 thumbnail: /static_files/presentations/lec_05.jpg

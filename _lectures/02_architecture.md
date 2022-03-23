@@ -1,6 +1,6 @@
 ---
 type: lecture
-date: 2022-04-14T08:00:00+1:00
+date: 2022-03-31T08:00:00+1:00
 title: Architecture et Performances
 tldr: "Comment l'Architecture des ordinateurs influe sur les performances du calcul"
 thumbnail: /static_files/presentations/lec_02.jpg
