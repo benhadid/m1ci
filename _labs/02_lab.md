@@ -4,7 +4,7 @@ date: 2022-04-14T12:00:00+1:00
 title: 'Le multitâche (Threads)'
 attachment: /static_files/labs/lab_02.zip
 #solutions: /static_files/labs/lab_solutions.pdf
-hide_from_announcements: True
+hide_from_announcements: False
 due_event:
     type: due
     date: 2022-04-17T18:00:00+1:00
