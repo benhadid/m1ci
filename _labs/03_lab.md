@@ -3,7 +3,7 @@ type: lab
 date: 2022-04-21T12:00:00+1:00
 title: 'OpenMP et instructions vectorielles'
 attachment: /static_files/labs/lab_03.zip
-hide_from_announcements: True
+hide_from_announcements: False
 due_event:
     type: due
     date: 2022-04-24T18:00:00+1:00
