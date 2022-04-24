@@ -23,7 +23,7 @@ due_event:
 
 Commencez par télécharger le fichier de démarrage fourni ci-dessus et décompressez-le dans le répertoire de votre choix.
 
-Dans cet exercice, implémentez dans le fichier `matmul_v1.c` la section indiquée par les marqueurs **BLOC_DEBUT** et **BLOC_FIN** afin d'effectuer, de façon **séquentielle**, le produit des matrices `A` et `B` et sauvegarder le résulat dans la matrice `C`.
+Dans cet exercice, implémentez dans le fichier `matmul_v1.c` la section indiquée par les marqueurs **BLOC_DEBUT** et **BLOC_FIN** afin d'effectuer, de façon **séquentielle**, le produit des matrices `A` et `B` et sauvegarder le résultat dans la matrice `C`.
 
 Une fois votre implémentation faite, vous pouvez compiler puis exécuter le programme à l'aide des commandes 
 
@@ -37,7 +37,7 @@ Prenez note du temps d'exécution retourné pour comparaison avec les exercices 
 # Exercice 2 : (calcul du produit matricielle C = A * B - version vectorisée)
 
 En vous appuyant sur les slides du cours , complétez la partie indiquée par les marqueurs **BLOC_DEBUT** et **BLOC_FIN** dans le fichier
-`matmul_v2.c` afin d'éffectuer la même tâche que précédemment, c-à-d. multiplier les matrices `A` et `B` et stocker le résultat dans la matrice `C`; sauf que cette fois-ci, utiliser les instructions intrinsèques pour implémenter une version << vectorisée >> du programme.
+`matmul_v2.c` afin d'effectuer la même tâche que précédemment, c-à-d. multiplier les matrices `A` et `B` et stocker le résultat dans la matrice `C`; sauf que cette fois-ci, utiliser les instructions intrinsèques pour implémenter une version << vectorisée >> du programme.
 
 Pour compiler puis exécuter cette version du programme lancez les commandes 
 
@@ -51,7 +51,7 @@ Comparez le temps d'exécution retourné ici avec la valeur retournée dans l'ex
 # Exercice 3 : (calcul du produit matricielle C = A * B - version OpenMP)
 
 
-Dans cet exercice, vous allez implémenter la version parallèle du produit matricielle codé dans l'éxercice 1. En sens, reprenez votre code de l'exercice 1 et insérer le dans la partie indiquée par les marqueurs **BLOC_DEBUT** et **BLOC_FIN**  dans le fichier `matmul_v3.c`. Apportez ensuite les modifications nécessaires pour paralléliser votre code avec **OpenMP**.
+Dans cet exercice, vous allez implémenter la version parallèle du produit matricielle codé dans l'exercice 1. En sens, reprenez votre code de l'exercice 1 et insérer le dans la partie indiquée par les marqueurs **BLOC_DEBUT** et **BLOC_FIN**  dans le fichier `matmul_v3.c`. Apportez ensuite les modifications nécessaires pour paralléliser votre code avec **OpenMP**.
 
 Pour compiler puis exécuter cette version du programme lancez les commandes 
 
@@ -60,12 +60,12 @@ $ make v3
 $ ./v3
 ```
 
-Comparez le temps d'exécution retourné ici avec les valeurs retournées dans les exércices  précédents. Que remarquez-vous ? 
+Comparez le temps d'exécution retourné ici avec les valeurs retournées dans les exercices  précédents. Que remarquez-vous ? 
 
 
 # Exercice 4 : (calcul du produit matricielle C = A * B - vectorisation et OpenMP)
 
-Dans cet exercice, vous allez implémenter la version **parallèle et vectorisée** du produit matricielle codé dans les éxercice 1 & 2. En sens, reprenez votre code de l'exercice précédent et insérer le dans la partie indiquée par les marqueurs **BLOC_DEBUT** et **BLOC_FIN**  dans le fichier `matmul_v4.c`. Apportez ensuite les modifications nécessaires pour *vectoriser* votre code avec des instructions intrinsèques.
+Dans cet exercice, vous allez implémenter la version **parallèle et vectorisée** du produit matricielle codé dans les exercices 1 & 2. En sens, reprenez votre code de l'exercice précédent et insérer le dans la partie indiquée par les marqueurs **BLOC_DEBUT** et **BLOC_FIN**  dans le fichier `matmul_v4.c`. Apportez ensuite les modifications nécessaires pour *vectoriser* votre code avec des instructions intrinsèques.
 
 Pour compiler puis exécuter cette version du programme lancez les commandes 
 
@@ -74,7 +74,7 @@ $ make v4
 $ ./v4
 ```
 
-Comparez le temps d'exécution retourné ici avec les valeurs retournées dans les exércices précédents. Que remarquez-vous ? 
+Comparez le temps d'exécution retourné ici avec les valeurs retournées dans les exercices précédents. Que remarquez-vous ? 
 
 
 # Exercice 5 : (calcul du produit matricielle C = A * B - vectorisation + OpenMP + cache blocking)
@@ -89,6 +89,6 @@ $ make v5
 $ ./v5
 ```
 
-Comparez le temps d'exécution retourné ici avec les valeurs retournées dans les exércices précédents.
+Comparez le temps d'exécution retourné ici avec les valeurs retournées dans les exercices précédents.
 
 
