@@ -27,7 +27,7 @@ Commencez par télécharger le fichier de démarrage fourni ci-dessus et décomp
 Dans cet exercice, implémentez dans le fichier `min_sequentiel.c` le corp de la fonction`min()`
 (indiquée par les marqueurs **BLOC_DEBUT** et **BLOC_FIN**)  qui effectue une recherche séquentielle puis retourne le minimum dans un tableau d'entiers (voir figure ci-dessous).
 
-![minimum]({{site.baseurl}}/static_files/labs/lab02/sequentielle.jpg){: .aligncenter width="50%" height="50%" }     
+![minimum]({{site.baseurl}}/static_files/images/sequentielle.jpg){: .aligncenter width="50%" height="50%" }     
 
 Ici, la valeur qui doit être retournée par le programme est égale à << **1** >>
 
@@ -43,7 +43,7 @@ Prenez note du temps d'exécution retourné pour comparaison avec les exercices 
 
 En vous appuyant sur les slides du cours et l'implémentation fournie dans le fichier `min_posix.c`, complétez le corp de la fonction `min_thread()` entre les marqueurs **BLOC_DEBUT** et **BLOC_FIN**  afin d'effectuer la même tâche que précédemment, c-à-d. une recherche de la valeur minimum dans un tableau; sauf que cette fois-ci, votre boucle doit s'exécuter en parallèle.
 
-![minimum_posix]({{site.baseurl}}/static_files/labs/lab02/posix.jpg){: .aligncenter width="40%" height="40%" } 
+![minimum_posix]({{site.baseurl}}/static_files/images/posix.jpg){: .aligncenter width="40%" height="40%" } 
 
 N'oubliez pas d'introduire les instructions nécessaires pour gérer correctement les << sections critiques >> s'il y a lieu. 
 
