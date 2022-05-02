@@ -3,7 +3,7 @@ type: lab
 date: 2022-04-28T12:00:00+1:00
 title: 'Introduction à OpenCL'
 attachment: /static_files/labs/lab_04.zip
-hide_from_announcements: True
+hide_from_announcements: False
 due_event:
     type: due
     date: 2022-05-08T18:00:00+1:00
