@@ -42,7 +42,7 @@ $ ./vadd
 
 Dans cet exercice, vous allez modifier le fichier `vadd_c.c` fourni dans l'exercice n° 1 afin de réaliser plusieurs opérations d'addition de tableaux.
 
-  - Ajoutez des objets mémoires supplémentaires et assignez-les à des vecteurs définis sur l'hôte (voir le programme vadd fourni pour des exemples)
+  - Ajoutez des objets mémoires supplémentaires et assignez-les à des vecteurs définis sur l'hôte (voir le programme `vadd` fourni pour des exemples).
   - Codez une série d'opérations d'addition de vecteurs… par ex : `C = A + B; D = C + E; F = D + G;`
   - Récupérez le résultat final et vérifiez qu'il est correct
 
