@@ -14,7 +14,7 @@ due_event:
 
   - Vérifier que vous pouvez compiler et exécuter un << kernel >> OpenCL
 
-  - Maitriser les commandes d'exécution de << kernel >> OpenCL et les instructions de gestion des objets mémoires associés
+  - Maîtriser les commandes d'exécution de << kernel >> OpenCL et les instructions de gestion des objets mémoires associés
 
   - Comprendre comment définir les arguments d'exécution pour un << kernel >> OpenCL
 
