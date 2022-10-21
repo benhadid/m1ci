@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-9FKYZLVKPL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-9FKYZLVKPL');
+  </script>
+  
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title> Mémoire Cache - Calcul Intensif (M1CI) / Printemps 2022 </title>
+  <meta name="description" content="Objectifs      Découvrir comment les schémas d’accès à la mémoire déterminent les taux de succès de cache.        Déterminer quels schémas d’accès à la mémoi...">
+
+  <link rel="shortcut icon" href="https://benhadid.github.io//m1ci/favicon.ico?" />
+  <link rel="stylesheet" href="/m1ci/_css/main.css">
+  <link rel="canonical" href="https://benhadid.github.io//m1ci/labs/01_lab">
+  <link rel="alternate" type="application/rss+xml" title="Calcul Intensif (M1CI) / Printemps 2022 - " href="https://benhadid.github.io//m1ci/feed.xml" />
+
+  <link rel='stylesheet' id='open-sans-css'  href='//fonts.googleapis.com/css?family=Open+Sans%3A300italic%2C400italic%2C600italic%2C300%2C400%2C600&#038;subset=latin%2Clatin-ext&#038;ver=4.2.4' type='text/css' media='all' />
+  <link href='https://fonts.googleapis.com/css?family=Titillium+Web:600italic,600,400,400italic' rel='stylesheet' type='text/css'>
+
+  
+
+  
+
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+
+  <!-- MathJax -->
+  <script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
+  </script>
+</head>
+
+
+  <body>
+
+    <header class="site-header">
+
+  <div class="wrapper" style="z-index: 100;">
+      <table><tr>
+          <td><img width="75" src="/m1ci/_images/logo.png" valign="middle"></td>
+          <td style="padding-left:10px;"><a class="schoolname" style="font-size: 15px;" class="site-title" href=""></a>
+          <br/>
+          <span style="margin-top: -2px;margin-bottom: -10px;" class="site-title"><a href="/m1ci/" title="Calcul Intensif (M1CI) / Printemps 2022 - "><b>Calcul Intensif (M1CI)</a></b></span>
+          <br/>
+          <span class="coursesemeter" style="font-size: 12px;font-weight: bold;margin-top: 10px;display: block;">Printemps 2022</span>
+          </td>
+        </tr></table>
+
+    <nav class="site-nav">
+
+      <a href="#" class="menu-icon menu.open">
+        <svg viewBox="0 0 18 15">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </a>  
+
+    <div class="trigger"><h1>Main Navigation</h1>
+
+ <ul class="menu">
+    
+    <li>
+
+      
+      
+
+      <a class="page-link" href="/m1ci/">
+        <i class="fa fa-home fa-lg"></i> Accueil
+      </a>
+
+    </li>
+    
+    <li>
+
+      
+      
+
+      <a class="page-link" href="/m1ci/schedule/">
+        <i class="fas fa-calendar-alt"></i> Programme
+      </a>
+
+    </li>
+    
+    <li>
+
+      
+      
+
+      <a class="page-link" href="/m1ci/lectures/">
+        <i class="fas fa-book-reader"></i> Cours
+      </a>
+
+    </li>
+    
+    <li>
+
+      
+      
+
+      <a class="page-link" href="/m1ci/labs/">
+        <i class="fas fa-laptop-code"></i> T. Pratiques
+      </a>
+
+    </li>
+    
+    <li>
+
+      
+      
+
+      <a class="page-link" href="/m1ci/materials/">
+        <i class="fas fa-book"></i> Ressources
+      </a>
+
+    </li>
+    
+</ul>
+
+
+     </div>  
+    </nav>
+
+  </div>
+
+  <div class="header-texture" style="height:100%; z-index: 0; position: absolute; top:0; right: 0; left: 0; 
+  background-image: url('/m1ci/_images/pattern.png');" />
+
+</header>
+
+
+    <div class="page-content">
+      <div class="wrapper">
+        <div class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Mémoire Cache</h1>
+    <p class="post-meta">Publié le
+      <!--
+      Thursday
+      24/03/2022
+      -->
+      
+      Jeudi
+      24
+      
+      Mars
+      2022
+    </p>
+  </header>
+
+  <div>
+    
+    <span style="font-weight: bold">Date prévue :
+      <!-- 10/04/2022 -->
+
+      
+      Dimanche
+      10
+      
+      Avril
+      2022
+
+
+    </span>
+    
+
+    
+    <p style="font-weight: bold">Télécharger
+
+      
+
+      
+      [<a href="/m1ci/static_files/labs/lab_01.zip">démarrage</a>]
+      
+
+      
+
+    </p>
+    
+
+  </div>
+
+  <br />
+  <article class="post-content">
+    <h1 id="objectifs">Objectifs</h1>
+
+<ul>
+  <li>
+    <p>Découvrir comment les schémas d’accès à la mémoire déterminent les taux de succès de cache.</p>
+  </li>
+  <li>
+    <p>Déterminer quels schémas d’accès à la mémoire produisent de BONS taux de succès.</p>
+  </li>
+  <li>
+    <p>Être en mesure d’optimiser le code pour produire de bons taux de succès de cache.</p>
+  </li>
+</ul>
+
+<h1 id="exercice-1--ordre-des-boucles-et-multiplication-matricielle">Exercice 1 : (Ordre des boucles et multiplication matricielle)</h1>
+
+<p>Pour rappel, les matrices sont des structures de données à deux dimensions dans lesquelles chaque élément de données est accessible via deux indices. Pour multiplier deux matrices, nous pouvons simplement utiliser trois boucles imbriquées. Par exemple, en supposant des matrices A, B et C de dimensions n-par-n et stockées dans des tableaux de colonnes à une dimension :</p>
+
+<pre><code class="language-C">for (int i = 0; i &lt; n; i++)
+    for (int j = 0; j &lt; n; j++)
+        for (int k = 0; k &lt; n; k++)
+            C[i+j*n] += A[i+k*n] * B[k+j*n];
+</code></pre>
+
+<p>Les opérations de multiplication matricielle sont au cœur de nombreux algorithmes d’algèbre linéaire, et une multiplication matricielle efficace est essentielle pour de nombreuses applications dans les sciences appliquées.</p>
+
+<p>Dans le code ci-dessus, notez que les boucles sont ordonnées i, j, k. Si nous examinons la boucle la plus interne (celle qui incrémente k), on voit qu’elle…</p>
+
+<ul>
+  <li>accède le tableau B avec un pas de 1</li>
+  <li>accède le tableau A avec un pas de n</li>
+  <li>accède le tableau C avec un pas de 0 (ne dépend pas de k)</li>
+</ul>
+
+<p>Pour calculer <strong>correctement</strong> la multiplication matricielle, l’ordre des boucles n’a pas d’importance. <strong>MAIS</strong>, l’ordre dans lequel nous choisissons d’accéder aux éléments des matrices peut avoir <strong>un impact important sur les performances</strong>. Les caches fonctionnent mieux (i.e. un meilleur taux de succès) lorsque les accès à la mémoire exposent une localité spatiale et temporelle, permettant la réutilisation des blocs de données déjà contenus dans le cache. L’optimisation des schémas d’accès à la mémoire dans un programme est essentielle pour obtenir de bonnes performances.</p>
+
+<p>Ouvrez le fichier en langage C <code class="language-plaintext highlighter-rouge">matrixMultiply.c</code> dans l’éditeur de votre choix et examinez son contenu. Vous remarquerez que le fichier contient six implémentations (l’une d’elles est illustrée ci-dessus) de multiplication de matrices en utilisant des ordres différents des trois boucles imbriquées.</p>
+
+<p><strong>Tâche :</strong> Déduisez les pas utilisés dans chaque ensemble de boucles imbriquées des cinq autres implémentations.</p>
+
+<p>Compilez et exécutez le fichier <code class="language-plaintext highlighter-rouge">matrixMultiply.c</code> avec la commande suivante, puis répondez aux questions ci-dessous.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>make ex2
+</code></pre></div></div>
+
+<p>Notez que la commande de compilation dans le Makefile utilise l’indicateur ‘-O3’. Ce paramètre permet d’activer toutes les optimisations de performance possible du compilateur. La commande ci-dessous exécutera quelques multiplications de matrice selon les six implémentations différentes dans le fichier, et affichera la vitesse à laquelle chaque implémentation a exécuté l’opération. L’unité « Gflops/s » signifie : « Giga-opérations en virgule flottante par seconde ». Plus le nombre est grand, plus le calcul est rapide !</p>
+
+<ol>
+  <li>
+    <p>Quel(s) ordre(s) de boucles donne(nt) le meilleur résultat ? Pourquoi ?</p>
+  </li>
+  <li>
+    <p>Quel(s) ordre(s) de boucles donne(nt) le pire résultat ? Pourquoi ?</p>
+  </li>
+  <li>
+    <p>Comment la façon dont nous parcourons les matrices affecte-t-elle les performances ?</p>
+  </li>
+</ol>
+
+<h1 id="exercice-2-transposition-de-matrice-par-bloc">Exercice 2: (Transposition de matrice par bloc)</h1>
+
+<h2 id="transposition-matricielle">Transposition matricielle</h2>
+
+<p>Nous souhaitons permuter les lignes et les colonnes d’une matrice (voir figure ci-dessous). Cette opération est appelée <em>transposition de matrice</em> et une implémentation efficace peut être très utile, particulièrement quand on effectue des opérations assez compliquées en algèbre linéaire. La transposée de la matrice A est souvent désignée par A<sup><em>T</em></sup>.</p>
+
+<p><img src="/m1ci/static_files/images/matrix_transpose.png" alt="Transposition" class="aligncenter" width="50%" height="50%" /></p>
+
+<h2 id="le--cache-blocking-">Le « cache-blocking »</h2>
+
+<p>Dans l’exercice précédent sur les multiplications de matrices, nous parcourons (avec des pas différents) toutes les valeurs des matrices A et B pour calculer une valeur de la matrice C. Ainsi, nous accédons constamment à de nouvelles valeurs de la mémoire et obtenons très peu de localité temporelle et / ou spatiale des accès mémoire !</p>
+
+<p>Nous pouvons améliorer la quantité de réutilisation des données dans les caches en implémentant une technique appelée « cache-blocking ». Plus formellement, Le « cache-blocking » est une technique qui consiste à ré-écrire une opération sur les tableaux de sorte à forcer la réutilisation des données présentes dans le cache. Elle doit donc prendre en compte la taille du cache comme argument. Dans le cas de la transposition matricielle, on envisage d’effectuer la transposition un bloc à la fois.</p>
+
+<p><img src="/m1ci/static_files/images/block_matrix_transpose.png" alt="BlocTransposition" class="aligncenter" width="50%" height="50%" /></p>
+
+<p>Dans l’image ci-dessus, nous transposons chaque sous-matrice \(A_{ij}\) de la matrice \(A\) dans son <strong>emplacement final</strong> dans la matrice de sortie, une sous-matrice à la fois. Nous pouvons vérifier que la transposition de chaque sous-matrice individuelle est équivalent à la transposition de la matrice entière.</p>
+
+<p>Puisque la transposition de la matrice entière est effectuée une sous-matrice à la fois, cela permet de consolider en cache les accès mémoire à ce petit morceau de données lors de la transposition de cette sous-matrice particulière; ce qui augmente le degré de localité temporelle (et spatiale) que nous exposons et améliore ainsi les performances.</p>
+
+<p>Dans cet exercice, vous allez compléter une implémentation pour la transposition de matrice et analyser ses performances.
+En particulier, votre tâche consiste à implémenter la technique du « cache-blocking » dans la fonction <code class="language-plaintext highlighter-rouge">transpose_blocking()</code> dans le fichier <code class="language-plaintext highlighter-rouge">transpose.c</code>. <strong>Vous ne devez PAS supposer que la largeur de la matrice (<code class="language-plaintext highlighter-rouge">n</code>) est un multiple de la taille du bloc <code class="language-plaintext highlighter-rouge">blocksize</code></strong>. Après avoir implémenté la fonction <code class="language-plaintext highlighter-rouge">transpose_blocking()</code>, vous pouvez compiler et exécuter votre code en entrant sur la console la commande :</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>make ex3
+<span class="nv">$ </span>./transpose n blocksize
+</code></pre></div></div>
+
+<p>où <code class="language-plaintext highlighter-rouge">n</code> est la largeur de la matrice et <code class="language-plaintext highlighter-rouge">blocksize</code> est la taille du bloc. Par exemple, <code class="language-plaintext highlighter-rouge">n</code> = 10000 et <code class="language-plaintext highlighter-rouge">blocksize</code> = 33.</p>
+
+<p>Si votre implémentation de <code class="language-plaintext highlighter-rouge">transpose_blocking()</code> est correcte, la méthode de découpage en blocs devrait montrer une amélioration substantielle des performances par rapport à la version ‘naïve’.</p>
+
+<p><strong>Conseils :</strong> (si vous ne savez pas par où commencer !)</p>
+
+<p>Commencez par examiner la fonction <code class="language-plaintext highlighter-rouge">transpose_naive()</code> incluse dans le fichier. Notez que l’indice <code class="language-plaintext highlighter-rouge">y</code> parcourt verticalement TOUTE la matrice <code class="language-plaintext highlighter-rouge">src</code> dans une itération de la boucle externe avant de se remettre à <code class="language-plaintext highlighter-rouge">0</code>. Une autre façon de dire cela est que l’indice <code class="language-plaintext highlighter-rouge">x</code> est mis à jour seulement après que l’indice <code class="language-plaintext highlighter-rouge">y</code> ait parcouru toute la plage d’indices <code class="language-plaintext highlighter-rouge">[0 .. n-1]</code>. C’est le comportement que nous voudrions changer, on aimerait éviter de parcourir tous les indices du tableau.</p>
+
+<p>En bref : remplissez <code class="language-plaintext highlighter-rouge">dst</code> avec un bloc carré à la fois, où chaque bloc est de dimension <code class="language-plaintext highlighter-rouge">blocsize</code> par <code class="language-plaintext highlighter-rouge">blocsize</code>.</p>
+
+<p>Au lieu de mettre à jour <code class="language-plaintext highlighter-rouge">x</code> uniquement lorsque <code class="language-plaintext highlighter-rouge">y</code> ait parcouru tous les indices <code class="language-plaintext highlighter-rouge">0</code> à <code class="language-plaintext highlighter-rouge">n-1</code>, vous voudriez passer à la ligne suivante de <code class="language-plaintext highlighter-rouge">dst</code> après avoir parcouru la largeur (axe horizontal) d’un seul bloc. De même, vous voudriez parcourir seulement la hauteur d’un bloc (axe vertical) avant de passer au bloc suivant. Quelle est la taille d’un bloc ? Elle est donnée par le paramètre <code class="language-plaintext highlighter-rouge">blocksize</code> !</p>
+
+<p><strong>Indication :</strong> Une solution simple nécessite quatre boucles <code class="language-plaintext highlighter-rouge">for</code>.</p>
+
+<p>Enfin, comme la largeur de la matrice <code class="language-plaintext highlighter-rouge">n</code> n’est pas nécessairement un multiple de la taille de bloc <code class="language-plaintext highlighter-rouge">blocksize</code>, la colonne et ligne finales de blocs seront tronquées (voir les blocs \(A_{3\_}\) et \(A_{\_3}\) dans la figure ci-dessous). Pour gérer cette situation, vous pouvez faire l’exercice en supposant au début que <code class="language-plaintext highlighter-rouge">n</code> est un multiple de <code class="language-plaintext highlighter-rouge">blocksize</code>, puis ajouter une condition quelque part dans le code pour ne rien faire lorsque vos index dépassent les limites de la matrice.</p>
+
+<p><img src="/m1ci/static_files/images/size_mismatch_matrix_transpose.png" alt="CutBlocTransposition" class="aligncenter" width="50%" height="50%" /></p>
+
+<p>Une fois que votre implémentation fonctionne corrèctement, l’étape suivante est d’effectuer une analyse des performances du programme.</p>
+
+<h2 id="modifier-les-dimensions-des-matrices">Modifier les dimensions des matrices</h2>
+
+<p>Exécutez votre code plusieurs fois avec une valeur de <code class="language-plaintext highlighter-rouge">blocksize</code> fixée à 20 et les valeurs 100, 1000, 2000, 5000 et 10000 pour <code class="language-plaintext highlighter-rouge">n</code>.</p>
+
+<ul>
+  <li>
+    <p>À quel moment la version de transposition par « cache-blocking » devient plus rapide que la version ‘naïve’ ?</p>
+  </li>
+  <li>
+    <p>Pourquoi la version en « cache-blocking » nécessite-t-elle que la matrice ait une certaine taille avant de surpasser les performances de la version ‘naïve’ ?</p>
+  </li>
+</ul>
+
+<h2 id="modifier-la-taille-du-bloc">Modifier la taille du bloc</h2>
+
+<p>Fixez <code class="language-plaintext highlighter-rouge">n</code> à 10000 et exécutez votre code avec une taille de bloc <code class="language-plaintext highlighter-rouge">blocksize</code> égale à 50, 100, 500, 1000, 5000.</p>
+
+<ul>
+  <li>Comment les performances changent-elles lorsque la taille du bloc augmente ? Pourquoi ?</li>
+</ul>
+
+<p><strong>Note finale :</strong> Dans ces deux exercices, les caractéristiques associées aux caches de notre machine nous sont inconnus (c.-à-d. taille, structure, …). Nous nous sommes simplement assurés que notre code expose un degré plus élevé de localité, et cela <!--, comme par magie,--> a amélioré considérablement les performances ! Cela indique que les caches, quels que soient leurs caractéristiques spécifiques, fonctionneront toujours mieux sur du code qui présente un bon niveau de localité (spatiale et/ou temporelle).</p>
+
+<!--
+Les caches exploitent la localité spatiale et temporelle des accès mémoire. Bien que le code présente naturellement ces deux choses, nous pouvons généralement le modifier pour qu'il présente PLUS de ces deux choses, améliorant ainsi notre taux de réussite du cache et augmentant ainsi notre vitesse d'exécution.
+-->
+
+  </article>
+
+</div>
+
+      </div>
+    </div>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <!--     <h2 class="footer-heading"></h2> -->
+    <div class="footer-col-wrapper">
+      <div class="footer-col  footer-col-1">
+
+        <p class="text">
+          02 rue Didouche Mourad<br />
+16000 Alger<br />
+
+      </div>
+
+      <div class="footer-col  footer-col-2">
+        <ul class="social-media-list">
+
+
+          
+
+          
+
+          
+
+          
+
+          
+
+
+
+
+        </ul>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+
+
+  </body>
+
+</html>

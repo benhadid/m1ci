@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-9FKYZLVKPL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-9FKYZLVKPL');
+  </script>
+  
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title> OpenMP et instructions vectorielles - Calcul Intensif (M1CI) / Printemps 2022 </title>
+  <meta name="description" content="Objectifs      Découvrir le parallélisme des données avec les données vectorielles        Optimiser le code en utilisant OpenMP et les instructions intrinsèq...">
+
+  <link rel="shortcut icon" href="https://benhadid.github.io//m1ci/favicon.ico?" />
+  <link rel="stylesheet" href="/m1ci/_css/main.css">
+  <link rel="canonical" href="https://benhadid.github.io//m1ci/labs/03_lab">
+  <link rel="alternate" type="application/rss+xml" title="Calcul Intensif (M1CI) / Printemps 2022 - " href="https://benhadid.github.io//m1ci/feed.xml" />
+
+  <link rel='stylesheet' id='open-sans-css'  href='//fonts.googleapis.com/css?family=Open+Sans%3A300italic%2C400italic%2C600italic%2C300%2C400%2C600&#038;subset=latin%2Clatin-ext&#038;ver=4.2.4' type='text/css' media='all' />
+  <link href='https://fonts.googleapis.com/css?family=Titillium+Web:600italic,600,400,400italic' rel='stylesheet' type='text/css'>
+
+  
+
+  
+
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+
+  <!-- MathJax -->
+  <script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
+  </script>
+</head>
+
+
+  <body>
+
+    <header class="site-header">
+
+  <div class="wrapper" style="z-index: 100;">
+      <table><tr>
+          <td><img width="75" src="/m1ci/_images/logo.png" valign="middle"></td>
+          <td style="padding-left:10px;"><a class="schoolname" style="font-size: 15px;" class="site-title" href=""></a>
+          <br/>
+          <span style="margin-top: -2px;margin-bottom: -10px;" class="site-title"><a href="/m1ci/" title="Calcul Intensif (M1CI) / Printemps 2022 - "><b>Calcul Intensif (M1CI)</a></b></span>
+          <br/>
+          <span class="coursesemeter" style="font-size: 12px;font-weight: bold;margin-top: 10px;display: block;">Printemps 2022</span>
+          </td>
+        </tr></table>
+
+    <nav class="site-nav">
+
+      <a href="#" class="menu-icon menu.open">
+        <svg viewBox="0 0 18 15">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </a>  
+
+    <div class="trigger"><h1>Main Navigation</h1>
+
+ <ul class="menu">
+    
+    <li>
+
+      
+      
+
+      <a class="page-link" href="/m1ci/">
+        <i class="fa fa-home fa-lg"></i> Accueil
+      </a>
+
+    </li>
+    
+    <li>
+
+      
+      
+
+      <a class="page-link" href="/m1ci/schedule/">
+        <i class="fas fa-calendar-alt"></i> Programme
+      </a>
+
+    </li>
+    
+    <li>
+
+      
+      
+
+      <a class="page-link" href="/m1ci/lectures/">
+        <i class="fas fa-book-reader"></i> Cours
+      </a>
+
+    </li>
+    
+    <li>
+
+      
+      
+
+      <a class="page-link" href="/m1ci/labs/">
+        <i class="fas fa-laptop-code"></i> T. Pratiques
+      </a>
+
+    </li>
+    
+    <li>
+
+      
+      
+
+      <a class="page-link" href="/m1ci/materials/">
+        <i class="fas fa-book"></i> Ressources
+      </a>
+
+    </li>
+    
+</ul>
+
+
+     </div>  
+    </nav>
+
+  </div>
+
+  <div class="header-texture" style="height:100%; z-index: 0; position: absolute; top:0; right: 0; left: 0; 
+  background-image: url('/m1ci/_images/pattern.png');" />
+
+</header>
+
+
+    <div class="page-content">
+      <div class="wrapper">
+        <div class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">OpenMP et instructions vectorielles</h1>
+    <p class="post-meta">Publié le
+      <!--
+      Thursday
+      21/04/2022
+      -->
+      
+      Jeudi
+      21
+      
+      Avril
+      2022
+    </p>
+  </header>
+
+  <div>
+    
+    <span style="font-weight: bold">Date prévue :
+      <!-- 24/04/2022 -->
+
+      
+      Dimanche
+      24
+      
+      Avril
+      2022
+
+
+    </span>
+    
+
+    
+    <p style="font-weight: bold">Télécharger
+
+      
+
+      
+      [<a href="/m1ci/static_files/labs/lab_03.zip">démarrage</a>]
+      
+
+      
+
+    </p>
+    
+
+  </div>
+
+  <br />
+  <article class="post-content">
+    <h1 id="objectifs">Objectifs</h1>
+
+<ul>
+  <li>
+    <p>Découvrir le parallélisme des données avec les données vectorielles</p>
+  </li>
+  <li>
+    <p>Optimiser le code en utilisant OpenMP et les instructions intrinsèques</p>
+  </li>
+  <li>
+    <p>Optimiser le code en utilisant OpenMP, les instructions intrinsèques et le « cache blocking »</p>
+  </li>
+</ul>
+
+<h1 id="exercice-1--calcul-du-produit-matricielle-c--a--b---version-séquentielle">Exercice 1 : (calcul du produit matricielle C = A * B - version Séquentielle)</h1>
+
+<p>Commencez par télécharger le fichier de démarrage fourni ci-dessus et décompressez-le dans le répertoire de votre choix.</p>
+
+<p>Dans cet exercice, implémentez dans le fichier <code class="language-plaintext highlighter-rouge">matmul_v1.c</code> la section indiquée par les marqueurs <strong>BLOC_DEBUT</strong> et <strong>BLOC_FIN</strong> afin d’effectuer, de façon <strong>séquentielle</strong>, le produit des matrices <code class="language-plaintext highlighter-rouge">A</code> et <code class="language-plaintext highlighter-rouge">B</code> et sauvegarder le résultat dans la matrice <code class="language-plaintext highlighter-rouge">C</code>.</p>
+
+<p>Une fois votre implémentation faite, vous pouvez compiler puis exécuter le programme à l’aide des commandes</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>make v1
+<span class="nv">$ </span>./v1
+</code></pre></div></div>
+
+<p>Prenez note du temps d’exécution retourné pour comparaison avec les exercices suivants</p>
+
+<h1 id="exercice-2--calcul-du-produit-matricielle-c--a--b---version-vectorisée">Exercice 2 : (calcul du produit matricielle C = A * B - version vectorisée)</h1>
+
+<p>En vous appuyant sur les slides du cours , complétez la partie indiquée par les marqueurs <strong>BLOC_DEBUT</strong> et <strong>BLOC_FIN</strong> dans le fichier
+<code class="language-plaintext highlighter-rouge">matmul_v2.c</code> afin d’effectuer la même tâche que précédemment, c-à-d. multiplier les matrices <code class="language-plaintext highlighter-rouge">A</code> et <code class="language-plaintext highlighter-rouge">B</code> et stocker le résultat dans la matrice <code class="language-plaintext highlighter-rouge">C</code>; sauf que cette fois-ci, utiliser les instructions intrinsèques pour implémenter une version « vectorisée » du programme.</p>
+
+<p>Pour compiler puis exécuter cette version du programme lancez les commandes</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>make v2
+<span class="nv">$ </span>./v2
+</code></pre></div></div>
+
+<p>Comparez le temps d’exécution retourné ici avec la valeur retournée dans l’exércice 1. Votre nouvelle version est-elle plus rapide ou plus lente ?</p>
+
+<h1 id="exercice-3--calcul-du-produit-matricielle-c--a--b---version-openmp">Exercice 3 : (calcul du produit matricielle C = A * B - version OpenMP)</h1>
+
+<p>Dans cet exercice, vous allez implémenter la version parallèle du produit matricielle codé dans l’exercice 1. En sens, reprenez votre code de l’exercice 1 et insérer le dans la partie indiquée par les marqueurs <strong>BLOC_DEBUT</strong> et <strong>BLOC_FIN</strong>  dans le fichier <code class="language-plaintext highlighter-rouge">matmul_v3.c</code>. Apportez ensuite les modifications nécessaires pour paralléliser votre code avec <strong>OpenMP</strong>.</p>
+
+<p>Pour compiler puis exécuter cette version du programme lancez les commandes</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>make v3
+<span class="nv">$ </span>./v3
+</code></pre></div></div>
+
+<p>Comparez le temps d’exécution retourné ici avec les valeurs retournées dans les exercices  précédents. Que remarquez-vous ?</p>
+
+<h1 id="exercice-4--calcul-du-produit-matricielle-c--a--b---vectorisation-et-openmp">Exercice 4 : (calcul du produit matricielle C = A * B - vectorisation et OpenMP)</h1>
+
+<p>Dans cet exercice, vous allez implémenter la version <strong>parallèle et vectorisée</strong> du produit matricielle codé dans les exercices 1 &amp; 2. En sens, reprenez votre code de l’exercice précédent et insérer le dans la partie indiquée par les marqueurs <strong>BLOC_DEBUT</strong> et <strong>BLOC_FIN</strong>  dans le fichier <code class="language-plaintext highlighter-rouge">matmul_v4.c</code>. Apportez ensuite les modifications nécessaires pour <em>vectoriser</em> votre code avec des instructions intrinsèques.</p>
+
+<p>Pour compiler puis exécuter cette version du programme lancez les commandes</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>make v4
+<span class="nv">$ </span>./v4
+</code></pre></div></div>
+
+<p>Comparez le temps d’exécution retourné ici avec les valeurs retournées dans les exercices précédents. Que remarquez-vous ?</p>
+
+<h1 id="exercice-5--calcul-du-produit-matricielle-c--a--b---vectorisation--openmp--cache-blocking">Exercice 5 : (calcul du produit matricielle C = A * B - vectorisation + OpenMP + cache blocking)</h1>
+
+<p>Afin d’améliorer la quantité de réutilisation des données dans les caches pendant le produit de matrice, nous pouvons utiliser la technique du « cache-blocking » déjà rencontrée dans l’exercice 2 du <a href="/m1ci/labs/01_lab">premier</a> TP. Reprenez votre code de l’exercice précédent
+et insérer le dans la partie indiquée par les marqueurs <strong>BLOC_DEBUT</strong> et <strong>BLOC_FIN</strong>  dans le fichier <code class="language-plaintext highlighter-rouge">matmul_v5.c</code>. Apportez ensuite les modifications nécessaires au code pour implémenter le produit par bloc des matrices <code class="language-plaintext highlighter-rouge">A</code> et <code class="language-plaintext highlighter-rouge">B</code>.</p>
+
+<p>Pour compiler puis exécuter cette version du programme lancez les commandes</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>make v5
+<span class="nv">$ </span>./v5
+</code></pre></div></div>
+
+<p>Comparez le temps d’exécution retourné ici avec les valeurs retournées dans les exercices précédents.</p>
+
+
+  </article>
+
+</div>
+
+      </div>
+    </div>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <!--     <h2 class="footer-heading"></h2> -->
+    <div class="footer-col-wrapper">
+      <div class="footer-col  footer-col-1">
+
+        <p class="text">
+          02 rue Didouche Mourad<br />
+16000 Alger<br />
+
+      </div>
+
+      <div class="footer-col  footer-col-2">
+        <ul class="social-media-list">
+
+
+          
+
+          
+
+          
+
+          
+
+          
+
+
+
+
+        </ul>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+
+
+  </body>
+
+</html>
