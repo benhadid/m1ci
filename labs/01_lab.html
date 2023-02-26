@@ -210,13 +210,17 @@
 
 <h1 id="exercice-1--ordre-des-boucles-et-multiplication-matricielle">Exercice 1 : (Ordre des boucles et multiplication matricielle)</h1>
 
-<p>Pour rappel, les matrices sont des structures de données à deux dimensions dans lesquelles chaque élément de données est accessible via deux indices. Pour multiplier deux matrices, nous pouvons simplement utiliser trois boucles imbriquées. Par exemple, en supposant des matrices A, B et C de dimensions n-par-n et stockées dans des tableaux de colonnes à une dimension :</p>
+<p>Pour rappel, les matrices sont des structures de données à deux dimensions dans lesquelles chaque élément de données est accessible via deux indices. Pour multiplier deux matrices, nous pouvons simplement utiliser trois boucles imbriquées. Par exemple, en supposant des matrices A, B et C de dimensions n-par-n et stockées dans des tableaux de lignes à une dimension :</p>
 
-<pre><code class="language-C">for (int i = 0; i &lt; n; i++)
-    for (int j = 0; j &lt; n; j++)
-        for (int k = 0; k &lt; n; k++)
-            C[i+j*n] += A[i+k*n] * B[k+j*n];
+<pre><code class="language-C">for (int i = 0; i &lt; N; i++)
+    for (int j = 0; j &lt; M; j++)
+        for (int k = 0; k &lt; K; k++)
+            C[i+j*n] += A[i*K+k] * B[k*M+j];
 </code></pre>
+
+<p><img src="/m1ci/static_files/images/matrix_storage.png" alt="Storage" class="aligncenter" width="70%" height="70%" /></p>
+
+<p><img src="/m1ci/static_files/images/matrix_multiply.png" alt="Multiplication" class="aligncenter" width="45%" height="45%" /></p>
 
 <p>Les opérations de multiplication matricielle sont au cœur de nombreux algorithmes d’algèbre linéaire, et une multiplication matricielle efficace est essentielle pour de nombreuses applications dans les sciences appliquées.</p>
 
