@@ -227,12 +227,12 @@
 <p>Dans le code ci-dessus, notez que les boucles sont ordonnées i, j, k. Si nous examinons la boucle la plus interne (celle qui incrémente k), on voit qu’elle…</p>
 
 <ul>
-  <li>accède le tableau B avec un pas de 1</li>
-  <li>accède le tableau A avec un pas de n</li>
+  <li>accède le tableau A avec un pas de 1</li>
+  <li>accède le tableau B avec un pas de M</li>
   <li>accède le tableau C avec un pas de 0 (ne dépend pas de k)</li>
 </ul>
 
-<p>Pour calculer <strong>correctement</strong> la multiplication matricielle, l’ordre des boucles n’a pas d’importance. <strong>MAIS</strong>, l’ordre dans lequel nous choisissons d’accéder aux éléments des matrices peut avoir <strong>un impact important sur les performances</strong>. Les caches fonctionnent mieux (i.e. un meilleur taux de succès) lorsque les accès à la mémoire exposent une localité spatiale et temporelle, permettant la réutilisation des blocs de données déjà contenus dans le cache. L’optimisation des schémas d’accès à la mémoire dans un programme est essentielle pour obtenir de bonnes performances.</p>
+<p>Ici, l’ordre des boucles n’a pas d’importance pour calculer <strong>correctement</strong> l’opération de multiplication matricielle. <strong>MAIS</strong>, l’ordre dans lequel nous choisissons d’accéder aux éléments des matrices peut avoir <strong>un impact important sur les performances</strong>. Les caches fonctionnent mieux (i.e. un meilleur taux de succès) lorsque les accès à la mémoire exposent une localité spatiale et temporelle, permettant la réutilisation des blocs de données déjà contenus dans le cache. L’optimisation des schémas d’accès à la mémoire dans un programme est essentielle pour obtenir de bonnes performances.</p>
 
 <p>Ouvrez le fichier en langage C <code class="language-plaintext highlighter-rouge">matrixMultiply.c</code> dans l’éditeur de votre choix et examinez son contenu. Vous remarquerez que le fichier contient six implémentations (l’une d’elles est illustrée ci-dessus) de multiplication de matrices en utilisant des ordres différents des trois boucles imbriquées.</p>
 
