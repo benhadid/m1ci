@@ -540,6 +540,9 @@ a.tosu {
 .responsive-table .table-row-assignment {
   background-color: #fff4bd;
 }
+.responsive-table .table-row-holidays {
+  background-color: #d3d3d3;
+}
 .responsive-table .table-row-lab {
   background-color: #EAE2EE;
 }
@@ -1040,7 +1043,8 @@ article ul {
 }
 
 article ul > li:before {
-  content: "–"; /* en dash */
+  content: "–";
+  /* en dash */
   position: absolute;
   margin-left: -1.1em;
 }
@@ -1076,16 +1080,30 @@ article ol ol > li:before {
     font-weight: bold;
 }
 */
-/* ul#archive li span {
+/* 
+ul#archive li span {
        color: #000;
        font-size: 85%;
 }
 
-
-
 ul#archive li span a:hover {
        border-bottom: #bdbdbd 1px solid;
-} */
+} 
+*/
+/*
+details{
+    margin-bottom:1em;
+    border:1px solid currentColor;
+    border-radius:.25em;
+    padding:.25em .5em
+}
+
+details[open] summary{
+    padding-bottom:.25em;
+    // border-bottom:1px solid currentColor;
+    margin-bottom:.25em
+}
+*/
 /**
  * Syntax highlighting styles
  */
@@ -1404,6 +1422,73 @@ body {
   color: #5bc0de;
 }
 
+.checkoff {
+  margin-bottom: 1em;
+  border: 1px dotted currentColor;
+  border-radius: 0.25em;
+  padding: 0.25em 0.5em;
+  background-color: hsl(21, 100%, 95%);
+  color: hsl(33, 100%, 4%);
+}
+
+.checkoff code {
+  background-color: hsl(21, 100%, 95%);
+  color: currentColor;
+}
+
+.checkoff legend {
+  font-family: "Titillium Web", sans-serif;
+  margin-left: 1em;
+  margin-bottom: 1em;
+  border: 1px dotted hsl(33, 100%, 4%);
+  border-radius: 0.25em;
+  padding: 0.25em 0.5em;
+  padding: 0.2em 0.8em;
+  background-color: hsl(21, 100%, 95%);
+  color: #6f2232;
+  font-weight: bold;
+}
+
+.tips {
+  margin-bottom: 1em;
+  border: 1px dotted currentColor;
+  border-radius: 0.25em;
+  padding: 0.25em 0.5em;
+  background-color: hsl(67, 100%, 95%);
+  color: hsl(33, 100%, 4%);
+}
+
+.tips code {
+  background-color: hsl(67, 100%, 95%);
+  color: currentColor;
+}
+
+.tips legend {
+  font-family: "Titillium Web", sans-serif;
+  margin-left: 1em;
+  margin-bottom: 1em;
+  border: 1px dotted hsl(33, 100%, 4%);
+  border-radius: 0.25em;
+  padding: 0.25em 0.5em;
+  padding: 0.2em 0.8em;
+  background-color: hsl(67, 100%, 95%);
+  color: #6f2232;
+  font-weight: bold;
+}
+
+#CvsMIPS {
+  /*width: 800px;*/
+  /*height: 800px;*/
+  margin: 0 auto;
+}
+
+#CvsMIPS > div {
+  float: left;
+  /* border: 2px solid black; */
+  width: 50%;
+  margin: 0 auto;
+}
+
 .wp-caption {
   background-color: #f3f3f3;
   text-align: center;
@@ -1494,6 +1579,22 @@ body {
 .styled-table tbody tr.active-row {
   font-weight: bold;
   color: #5f5f5f;
+}
+
+.styled-table tbody tr.appelee-row-highlight {
+  background-color: rgba(255, 214, 176, 0.7333333333);
+}
+
+.styled-table tbody tr.appelante-row-highlight {
+  background-color: rgba(197, 228, 240, 0.8352941176);
+}
+
+.styled-table tbody td.appelee-highlight {
+  background-color: rgba(255, 214, 176, 0.7333333333);
+}
+
+.styled-table tbody td.appelante-highlight {
+  background-color: rgba(197, 228, 240, 0.8352941176);
 }
 
 /*# sourceMappingURL=main.css.map */
