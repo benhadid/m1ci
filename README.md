@@ -1,1 +1,1 @@
-# Site du cour  << Vision par ordinateur >>
+# Site du cour  << Calcul Intensif >>
