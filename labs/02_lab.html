@@ -19,7 +19,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title> Le multitâche (Threads) - Calcul Intensif (M1CI) / Printemps 2025 </title>
-  <meta name="description" content="Objectifs      Découvrir le parallélisme de programme avec les threads POSIX        Apprendre à correctement gérer les « sections critiques » dans un program...">
+  <meta name="description" content="Objectifs      Découvrir le parallélisme de programme avec les threads        Apprendre à correctement gérer les « sections critiques » dans un programme    ...">
   
 
   <!--for gitlab pages -->
@@ -207,7 +207,7 @@
 
 <ul>
   <li>
-    <p>Découvrir le parallélisme de programme avec les threads POSIX</p>
+    <p>Découvrir le parallélisme de programme avec les threads</p>
   </li>
   <li>
     <p>Apprendre à correctement gérer les « sections critiques » dans un programme</p>
@@ -235,7 +235,7 @@
 </code></pre></div></div>
 <p>Prenez note du temps d’exécution retourné pour comparaison avec les exercices suivants</p>
 
-<h1 id="exercice-2--retourner-le-minimum-dans-un-tableau---version-posix">Exercice 2 : (retourner le minimum dans un tableau - version POSIX)</h1>
+<h1 id="exercice-2--retourner-le-minimum-dans-un-tableau---version-parallèle">Exercice 2 : (retourner le minimum dans un tableau - version parallèle)</h1>
 
 <p>En vous appuyant sur les slides du cours et l’implémentation fournie dans le fichier <code class="language-plaintext highlighter-rouge">min_posix.c</code>, complétez le corp de la fonction <code class="language-plaintext highlighter-rouge">min_thread()</code> entre les marqueurs <strong>BLOC_DEBUT</strong> et <strong>BLOC_FIN</strong>  afin d’effectuer la même tâche que précédemment, c-à-d. une recherche de la valeur minimum dans un tableau; sauf que cette fois-ci, votre boucle doit s’exécuter en parallèle.</p>
 
@@ -251,17 +251,21 @@
 
 <p>Comparez le temps d’exécution retourné ici avec la valeur retournée dans l’exercice 1. Votre nouvelle version est-elle plus rapide ou plus lente ? (<strong>Indication</strong> : si implémentée correctement, la version parallélisée devrait être plus rapide que la version séquentielle).</p>
 
-<h1 id="exercice-3--retourner-le-minimum-dans-un-tableau---version-openmp">Exercice 3 : (retourner le minimum dans un tableau - version OpenMP)</h1>
+<!--
+# Exercice 3 : (retourner le minimum dans un tableau - version OpenMP)
 
-<p>Dans cet exercice, vous allez implémenter entre les marqueurs <strong>BLOC_DEBUT</strong> et <strong>BLOC_FIN</strong>  dans le fichier <code class="language-plaintext highlighter-rouge">min_openmp.c</code>, la version parallèle <strong>OpenMP</strong> du programme de recherche de la valeur minimum dans un tableau. Comparée à la version POSIX de l’exercice n°2, la version <strong>OpenMP</strong> devrait être plus simple à mettre en oeuvre.</p>
+Dans cet exercice, vous allez implémenter entre les marqueurs **BLOC_DEBUT** et **BLOC_FIN**  dans le fichier `min_openmp.c`, la version parallèle **OpenMP** du programme de recherche de la valeur minimum dans un tableau. Comparée à la version POSIX de l'exercice n°2, la version **OpenMP** devrait être plus simple à mettre en oeuvre.
 
-<p>Pour compiler puis exécuter cette version du programme lancez les des commandes</p>
+Pour compiler puis exécuter cette version du programme lancez les des commandes 
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>make ex3
-<span class="nv">$ </span>./v3
-</code></pre></div></div>
+```bash
+$ make ex3
+$ ./v3
+```
 
-<p>Comparez le temps d’exécution retourné ici avec les valeurs retournées dans les exercices  précédents. Que remarquez-vous ?</p>
+Comparez le temps d'exécution retourné ici avec les valeurs retournées dans les exercices  précédents. Que remarquez-vous ? 
+-->
+
 
   </article>
 
