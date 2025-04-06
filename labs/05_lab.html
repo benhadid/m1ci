@@ -18,8 +18,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title> Programmation avancée avec OpenCL - Calcul Intensif (M1CI) / Printemps 2025 </title>
-  <meta name="description" content="Objectifs  Familiarisation avec le workflow de développement OpenCL.  Optimisation de calcul sur une plateforme OpenCL.Exercice 1Ce TP reprend les concepts d...">
+  <title> Introduction à OpenCL - Calcul Intensif (M1CI) / Printemps 2025 </title>
+  <meta name="description" content="Objectifs      Vérifier que vous pouvez compiler et exécuter un « kernel » OpenCL        Maîtriser les commandes d’exécution de « kernel » OpenCL et les inst...">
   
 
   <!--for gitlab pages -->
@@ -155,7 +155,7 @@
         <div class="post">
 
   <header class="post-header">
-    <h1 class="post-title">Programmation avancée avec OpenCL</h1>
+    <h1 class="post-title">Introduction à OpenCL</h1>
     <p class="post-meta">Publié le
       <!--
       Sunday
@@ -173,11 +173,11 @@
   <div>
     
     <span style="font-weight: bold">Échéance :
-      <!-- 13/04/2025 -->
+      <!-- 21/04/2025 -->
 
       
-      Dimanche
-      13
+      Lundi
+      21
       
       Avril
       2025
@@ -193,7 +193,7 @@
       
 
       
-      [<a href="/m1ci/static_files/labs/lab_05.zip">démarrage</a>]
+      [<a href="/m1ci/static_files/labs/lab_04.zip">démarrage</a>]
       
 
       
@@ -204,46 +204,67 @@
   <br />
   <article class="post-content">
     <h1 id="objectifs">Objectifs</h1>
-<ul>
-  <li>Familiarisation avec le workflow de développement OpenCL.</li>
-  <li>Optimisation de calcul sur une plateforme OpenCL.
-<br /><br /></li>
-</ul>
-
-<h1 id="exercice-1">Exercice 1</h1>
-
-<p>Ce TP reprend les concepts discutés en cours sur les techniques d’optimisation de calcul dans OpenCL. En ce sens, vous implémenterez les algorithmes de multiplication de matrice carrée (A[N][N] * B[N][N] = C[N][N]) discutés en cours en utilisant OpenCL et en étudiant leurs performances. 
-<br /><br />
-La mise en œuvre comprend deux versions :</p>
 
 <ul>
   <li>
-    <p>les matrices A et B sont stockées dans la mémoire globale et le kernel de calcul accède aux données directement à partir de la mémoire globale</p>
+    <p>Vérifier que vous pouvez compiler et exécuter un « kernel » OpenCL</p>
   </li>
   <li>
-    <p>les matrices A et B sont chargées dans la mémoire locale d’un groupe de threads (c.-à-d. un work-group) et le kernel de calcul accède aux données dans cette mémoire locale. Ici, le kernel réalise une multiplication par bloc des matrices A et B et effectue une sommation partielle dans C pour obtenir le résultat final.
-<br /><br /></p>
+    <p>Maîtriser les commandes d’exécution de « kernel » OpenCL et les instructions de gestion des objets mémoires associés</p>
+  </li>
+  <li>
+    <p>Comprendre comment définir les arguments d’exécution pour un « kernel » OpenCL</p>
+  </li>
+  <li>
+    <p>Comprendre l’interface « hôte / kernel » OpenCL</p>
   </li>
 </ul>
 
-<p>Un code squelette est déjà fourni dans le kit de démarrage pour vos implémentations. Veuillez vous référer aux slides du cours « <strong>OpenCL (les bases)</strong> » pour la mise en œuvre des deux versions. Le slide n° 7 fournit la mise en œuvre de la version 1 et les slides n° 39 à 42 pour la version 2.
-<br /><br />
-Les algorithmes des versions 1 et 2 auront besoin d’une topologie en deux dimensions pour les threads dans un work-group; même observation peut être faite pour la topologie des groupes de threads dans la grille de calcul. Choisissez 16 x 16 pour la taille du work-group. Pour simplifier, vous pouvez supposer que la taille de la matrice N est un nombre multiple de 16 ( 16 = dimension_horizontale(work_group) = dimension_verticale(work_group) ).
-<br /><br />
-Pour compiler puis exécuter le programme, entrez les commandes suivantes :</p>
+<h1 id="exercice-1--addition-de-vecteurs">Exercice 1 : (addition de vecteurs)</h1>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>make
-<span class="nv">$ </span>./mult
+<p>Commencez par télécharger le fichier de démarrage fourni ci-dessus et décompressez-le dans le répertoire de votre choix.</p>
+
+<p>Dans cet exercice, vous allez simplement compiler puis exécuter le programme OpenCL fourni qui additionne deux tableaux A et B; et retourne le résultat dans un tableau C. Consultez le code hôte dans <code class="language-plaintext highlighter-rouge">vadd_c.c</code> et identifiez les appels d’API OpenCL discutés en cours.</p>
+
+<p>Pour compiler puis exécuter le programme, utilisez les commandes :</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>make vadd
+<span class="nv">$ </span>./vadd
 </code></pre></div></div>
-<p><br /><br /></p>
 
-<h1 id="exercice-2">Exercice 2</h1>
+<h2 id="résultat-attendu-">Résultat attendu :</h2>
+<ul>
+  <li>Un message vérifiant que l’addition des vecteurs s’est terminée avec succès.</li>
+</ul>
 
-<p>En reprenant la deuxième version du produit de matrices implémentée dans l’exercice précédent, opérez les changements nécessaires dans votre code pour réaliser des multiplications de matrices pas nécessairement carrées : (A[M][K] * B[K][N] = C[M][N]) avec M ≠ N. Les topologies des threads dans un work-group; et des groupes de threads dans la grille de calcul restent inchangées.
-<br /><br />
-Dans une première version, vous pouvez supposer que M et N sont des multiples de 16 (comme pour l’exercice précédent). 
-<br /><br />
-Dans une version un peu plus compliquée, votre programme devrait réaliser des multiplications de matrices de tailles quelconques (c.-à-d. pas nécessairement des multiples de 16).</p>
+<h1 id="exercice-2--série-daddition-de-vecteurs">Exercice 2 : (série d’addition de vecteurs)</h1>
+
+<p>Dans cet exercice, vous allez modifier le fichier <code class="language-plaintext highlighter-rouge">vadd_c.c</code> fourni dans l’exercice n° 1 afin de réaliser plusieurs opérations d’addition de tableaux.</p>
+
+<ul>
+  <li>Ajoutez des objets mémoires supplémentaires et assignez-les à des vecteurs définis sur l’hôte (voir le programme <code class="language-plaintext highlighter-rouge">vadd</code> fourni pour des exemples).</li>
+  <li>Codez une série d’opérations d’addition de vecteurs… par ex : <code class="language-plaintext highlighter-rouge">C = A + B; D = C + E; F = D + G;</code></li>
+  <li>Récupérez le résultat final et vérifiez qu’il est correct</li>
+</ul>
+
+<p>Pour compiler puis exécuter le programme, utiliser les mêmes commandes fournies dans l’exercice n° 1</p>
+
+<h2 id="résultat-attendu--1">Résultat attendu :</h2>
+<ul>
+  <li>Un message vérifiant que la série d’addition de vecteurs s’est terminée avec succès.</li>
+</ul>
+
+<h1 id="exercice-3--addition-de-trois-vecteurs">Exercice 3 : (addition de trois vecteurs)</h1>
+
+<p>Dans les exercices précédents, le <em>kernel</em> fourni permet d’additionner deux tableaux à la fois. Nous allons maintenant modifier notre programme (hôte et kernel) afin de réaliser une opération d’addition de trois tableaux en un coup.</p>
+
+<ul>
+  <li>Modifiez le « kernel » dans <code class="language-plaintext highlighter-rouge">vadd_c.c</code> pour additionner trois tableaux en un coup (ex : D = A + B + C)</li>
+  <li>Modifiez ensuite le code hôte pour définir trois vecteurs en entrée et associez-les aux arguments du « kernel » respectifs.</li>
+  <li>Récupérez le résultat final et vérifiez qu’il est correct</li>
+</ul>
+
+<p>Pour compiler puis exécuter le programme, utiliser les mêmes commandes fournies dans l’exercice n° 1.</p>
 
   </article>
 
